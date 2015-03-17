@@ -16,13 +16,14 @@ func Help() {
 func main() {
 	if len(os.Args) == 1 {
 		Help()
+		os.Exit(1)
 	} else {
 		ip := os.Args[1]
 		req := taobaoip.Req{IP: ip}
 		rb, err := req.URLOpen()
 		if err != nil {
 			fmt.Println(err.Error())
-			return
+			os.Exit(2)
 		}
 		rb.Print()
 	}

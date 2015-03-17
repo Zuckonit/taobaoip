@@ -35,9 +35,9 @@ type IPInfo struct {
 	CityId    string `json:city_id`
 	County    string `json:county`
 	CountyId  string `json:county_id`
-	Isp       string `isp`
-	IspId     string `isp_id`
-	Ip        string `ip`
+	Isp       string `json:isp`
+	IspId     string `json:isp_id`
+	Ip        string `json:ip`
 }
 
 type ValidData struct {
