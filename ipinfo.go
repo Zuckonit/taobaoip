@@ -55,7 +55,7 @@ type ResponseBody struct {
 }
 
 type Req struct {
-	ip string
+	IP string
 }
 
 func isIPV4(ip string) bool {
@@ -66,10 +66,10 @@ func isIPV4(ip string) bool {
 }
 
 func (r *Req) URLOpen() (*ResponseBody, error) {
-	if !isIPV4(r.ip) {
+	if !isIPV4(r.IP) {
 		return nil, ErrInvalidIPV4
 	}
-	url := BaseURL + r.ip
+	url := BaseURL + r.IP
 	resp, err := http.Get(url)
 	defer resp.Body.Close()
 	if err != nil {

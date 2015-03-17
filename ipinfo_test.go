@@ -19,7 +19,7 @@ func TestIsIPV4(t *testing.T) {
 }
 
 func TestURLOpen(t *testing.T) {
-	req := Req{ip: "192.128.1.10s"}
+	req := Req{IP: "192.128.1.10s"}
 	rb, err := req.URLOpen()
 	if err == nil {
 		t.Error("IP is invalid")
@@ -27,7 +27,7 @@ func TestURLOpen(t *testing.T) {
 	if rb != nil {
 		_, err = rb.GetIPInfo()
 
-		req = Req{ip: "127.0.0.1"}
+		req = Req{IP: "127.0.0.1"}
 		rb, err = req.URLOpen()
 		info, err := rb.GetIPInfo()
 		if err != nil {
@@ -36,7 +36,7 @@ func TestURLOpen(t *testing.T) {
 			t.Error("its a LAN")
 		}
 
-		req = Req{ip: "192.1.1.1"}
+		req = Req{IP: "192.1.1.1"}
 		rb, err = req.URLOpen()
 		info, err = rb.GetIPInfo()
 		if err != nil {
