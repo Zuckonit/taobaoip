@@ -20,7 +20,8 @@ func main() {
 		ip := os.Args[1]
 		req := taobaoip.Req{IP: ip}
 		rb, err := req.URLOpen()
-		if err != nil || rb == nil {
+		if err != nil {
+			fmt.Println(err.Error())
 			return
 		}
 		rb.Print()
